@@ -17,6 +17,7 @@
 
 package com.google.android.systemui.theme
 
+import android.app.ActivityManager
 import android.app.UiModeManager
 import android.app.WallpaperManager
 import android.content.Context
@@ -66,6 +67,7 @@ class ThemeOverlayControllerGoogle @Inject constructor(
     javaAdapter: JavaAdapter,
     keyguardTransitionInteractor: KeyguardTransitionInteractor,
     uiModeManager: UiModeManager,
+    activityManager: ActivityManager,
     configurationController: ConfigurationController,
     tunerService: TunerService,
     @param:Main private val mainResources: Resources,
@@ -91,7 +93,8 @@ class ThemeOverlayControllerGoogle @Inject constructor(
     keyguardTransitionInteractor,
     uiModeManager,
     configurationController,
-    tunerService    
+    tunerService,
+    activityManager
 ) {
     init {
         configurationController.addCallback(object :
